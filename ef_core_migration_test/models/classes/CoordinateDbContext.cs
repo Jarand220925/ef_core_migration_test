@@ -2,17 +2,10 @@
 
 namespace ef_core_migration_test.models.classes;
 
-public class CoordinateDbContext(DbContextOptions<CoordinateDbContext> options) : DbContext
+public class CoordinateDbContext(DbContextOptions<CoordinateDbContext> options) : DbContext(options)
 {
     public DbSet<Coordinate> Coordinates { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseNpgsql(
-            "<connection_string>", 
-            o => o.UseNetTopologySuite() // Enable NetTopologySuite support
-        );
-    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasPostgresExtension("postgis"); // Ensure PostGIS extension is created
