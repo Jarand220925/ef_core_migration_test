@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿//using Microsoft.EntityFrameworkCore;
 
-namespace ef_core_migration_test.models.classes;
+/*namespace ef_core_migration_test.models.classes;
 
 public class CoordinateDbContext(DbContextOptions<CoordinateDbContext> options) : DbContext(options)
 {
@@ -21,7 +21,7 @@ public class CoordinateDbContext(DbContextOptions<CoordinateDbContext> options) 
     {
         //Kommentar nedenfor er muligens ikke relevant.
         /* Legg også merke til at _nextId er vekke, samt id constructoren i UserTask. Id håndteringen er nå flyttet til databasen i steden for.  */
-        var newCoordinate = new Coordinate()
+        /*var newCoordinate = new Coordinate()
         {
             CoordinateId = coordinateId,
             EPSG =  epsg,
@@ -36,8 +36,8 @@ public class CoordinateDbContext(DbContextOptions<CoordinateDbContext> options) 
     //Kommentar nedenfor er muligens ikke relevant.
     /* I de etterfølgende metodene skal vi jo bare "lese" tasks, vi skal ikke endre de på noen måte. Da kan vi hente ut Tasks.AsNoTracking(), det betyr at vi sier til EF core
     at denne hentingen av data, trenger ingen tracker overhead.  */
-    public List<Coordinate> GetAllCoordinates()
-    {
-        return Coordinates.AsNoTracking().ToList();
-    }
-}
+  // public List<Coordinate> GetAllCoordinates()
+    //{
+        //return Coordinates.AsNoTracking().ToList();
+   // }
+//}
