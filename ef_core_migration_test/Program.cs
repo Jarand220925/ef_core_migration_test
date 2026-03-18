@@ -23,3 +23,4 @@ app.MapGet("/",(EnergimerkingContext
  dbContext)=> dbContext.energimerkes);
 
 app.Run();
+// run app
